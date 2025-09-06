@@ -25,8 +25,9 @@ export const Route = createFileRoute('/ideas/')({
 })
 
 function IdeasPage() {
-  const {data: ideas} = useSuspenseQuery(ideaQueryOptions());
-  console.log(ideas);
+  const {data} = useSuspenseQuery(ideaQueryOptions());
+  const ideas = [...data].sort((a, b) => new Date
+  (b.createdAt).getTime() - new Date(a.createdAt).getTime());
   
   return <div className='p-4'>
     <h1 className='text-2xl font-bold mb-4'>Ideas</h1>
