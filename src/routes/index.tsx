@@ -36,7 +36,7 @@ function HomePage() {
     <h2 className="text-2xl font-semibold mb-4 text-gray-800">Latest Ideas</h2>
     <div className="space-y-6">
       {latestIdeas.map((idea) => (
-        <IdeaCard key={idea.id} idea={idea} button={false} />
+        <IdeaCard key={idea._id} idea={idea} button={false} />
       ))}
       
     </div>
